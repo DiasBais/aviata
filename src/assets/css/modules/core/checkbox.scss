@@ -1,0 +1,29 @@
+.simple-checkbox {
+  display: flex;
+}
+
+.checkbox {
+  display: none;
+}
+
+.checkbox__label {
+  background-image: url('/icons/checkbox/checkbox_normal.svg');
+  background-size: 100% 100%;
+  padding: 6px;
+  cursor: pointer;
+
+  &:hover {
+    background-image: url('/icons/checkbox/checkbox_hover.svg');
+  }
+
+  &--active {
+    background-image: url('/icons/checkbox/checkbox_active.svg');
+    background-size: 100% 100%;
+    padding: 6px;
+    cursor: pointer;
+
+    &:hover {
+      background-image: url('/icons/checkbox/checkbox_indeterminate.svg');
+    }
+  }
+}

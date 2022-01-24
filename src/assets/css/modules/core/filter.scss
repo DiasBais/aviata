@@ -1,0 +1,57 @@
+@import '../../variables.scss';
+
+.simple-filter {
+  padding: 12px;
+  background: $filter__background;
+  border-radius: 4px;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+
+    .title {
+      font-family: Open Sans;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 20px;
+      color: $text__black;
+    }
+
+    .close-filter {
+      fill: #B9B9B9;
+      cursor: pointer;
+
+      &:hover {
+        fill: #7284E4;
+      }
+    }
+  }
+
+  .list-options {
+    .options {
+      .option {
+        list-style: none;
+        padding: 10px 12px;
+        display: flex;
+
+        &__title {
+          font-family: Open Sans;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 12px;
+          line-height: 16px;
+          display: flex;
+          align-items: center;
+          color: $text__black;
+          padding-left: 10px;
+        }
+
+        &:hover {
+          cursor: pointer;
+          background: #EBEBEB;
+        }
+      }
+    }
+  }
+}
