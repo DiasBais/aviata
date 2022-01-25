@@ -1,14 +1,14 @@
 <template>
-  <Tickets />
+  <flights />
 </template>
 
 <script>
-import Tickets from './components/Tickets'
+import Flights from './components/Flights'
 
 export default {
   name: 'App',
   components: {
-    Tickets
+    Flights
   }
 }
 </script>

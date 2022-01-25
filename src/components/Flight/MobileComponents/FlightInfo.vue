@@ -1,5 +1,5 @@
 <template>
-  <div class="ticket-info">
+  <div class="flight-info">
     <div class="header">
       <div class="airline-logo">
         <svg width="15" height="20">
@@ -20,7 +20,7 @@
       </div>
     </div>
     <div class="flight-distance">
-      <div class="flight">
+      <div class="distance-block">
         <div class="distance">
           <div class="distance--info">
             <p class="start-point">ALA</p>
@@ -38,5 +38,5 @@
 </template>
 
 <style lang="scss">
-@import '../../../assets/css/modules/mobile/ticket/ticket_info.scss';
+@import '../../../assets/css/modules/mobile/flight/flight_info';
 </style>

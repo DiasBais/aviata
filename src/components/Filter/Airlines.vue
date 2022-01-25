@@ -6,6 +6,7 @@
 
 <script>
 import SimpleFilter from '../core/SimpleFilter'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'Airlines',
@@ -15,16 +16,28 @@ export default {
   data() {
     return {
       title: 'Авиакомпании',
-      filters: [
-        { key: 0, title: 'Все' },
-        { key: 1, title: 'Air Astana' },
-        { key: 2, title: 'Bek Air' },
-        { key: 3, title: 'Fly Arystan' },
-        { key: 4, title: 'SCAT Airlines' },
-        { key: 5, title: 'Lufthansa' },
-        { key: 6, title: 'Turkish Airlines' },
-        { key: 7, title: 'China Southern Air' },
-      ]
+      filters: []
+    }
+  },
+  computed: {
+    ...mapGetters({
+      airlines: 'getAirlines'
+    })
+  },
+  watch: {
+    airlines: {
+      deep: true,
+      handler: function() {
+        this.setFilters(Object.entries({...this.airlines}))
+      }
+    }
+  },
+  methods: {
+    setFilters(airlines) {
+      this.filters = []
+      for (const [key, item] of airlines) {
+        this.filters.push({key: key, title: item })
+      }
     }
   }
 }
