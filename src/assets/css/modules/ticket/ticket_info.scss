@@ -5,7 +5,7 @@
   align-items: center;
   padding: 25px 0px;
 
-  .logo {
+  .airline-logo {
     display: flex;
 
     .title {
@@ -21,11 +21,11 @@
     }
   }
 
-  .after {
+  .takeoff, .landing {
     text-align: center;
     margin-left: 35px;
 
-    p {
+    &--date {
       font-family: Open Sans;
       font-style: normal;
       font-weight: normal;
@@ -34,7 +34,7 @@
       color: $text__black;
     }
 
-    h1 {
+    &--time {
       font-family: Open Sans;
       font-style: normal;
       font-weight: 600;
@@ -44,64 +44,9 @@
     }
   }
 
-  .flight {
-    margin-left: 25px;
-
-    .flight--line {
-      margin-top: 10px;
-
-      &-info {
-        display: flex;
-        justify-content: space-between;
-        margin: -7px;
-
-        p {
-          font-family: Open Sans;
-          font-style: normal;
-          font-weight: normal;
-          font-size: 10px;
-          line-height: 12px;
-          text-align: center;
-          color: #B9B9B9;
-        }
-
-        span {
-          font-family: Open Sans;
-          font-style: normal;
-          font-weight: normal;
-          font-size: 12px;
-          line-height: 18px;
-          text-align: center;
-          color: $text__black;
-        }
-      }
-
-      &-svg {
-        ;
-      }
-    }
-
-    .flight--info {
-      font-family: Open Sans;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 12px;
-      line-height: 16px;
-      text-align: center;
-      color: #FF9900;
-    }
-  }
-
-  .before {
-    text-align: center;
-    margin-left: 25px;
+  .landing {
 
     p {
-      font-family: Open Sans;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 12px;
-      line-height: 16px;
       display: flex;
 
       span {
@@ -116,14 +61,49 @@
         margin-left: 3px;
       }
     }
+  }
 
-    h1 {
+  .flight {
+    margin-left: 25px;
+
+    .distance {
+      margin-top: 10px;
+
+      &--info {
+        display: flex;
+        justify-content: space-between;
+        margin: -7px;
+
+        .start-point, .end-point {
+          font-family: Open Sans;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 10px;
+          line-height: 12px;
+          text-align: center;
+          color: #B9B9B9;
+        }
+
+        .distance--time {
+          font-family: Open Sans;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 12px;
+          line-height: 18px;
+          text-align: center;
+          color: $text__black;
+        }
+      }
+    }
+
+    .layover {
       font-family: Open Sans;
       font-style: normal;
-      font-weight: 600;
-      font-size: 24px;
-      line-height: 33px;
-      color: $text__black;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 16px;
+      text-align: center;
+      color: #FF9900;
     }
   }
 }

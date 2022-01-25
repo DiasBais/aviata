@@ -12,5 +12,4 @@ export default {
 
 <style lang="scss">
 @import '../../assets/css/modules/core/button.scss';
-//@import '../../assets/css/modules/mobile/core/button.scss';
 </style>

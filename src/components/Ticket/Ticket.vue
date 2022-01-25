@@ -14,6 +14,7 @@ import TicketInfo from './TicketInfo'
 import TicketDetails from './TicketDetails'
 import Price from './Price'
 import MobileTicketInfo from './MobileComponents/TicketInfo'
+import {isMobile} from "../../assets/js/screen"
 
 export default {
   name: 'App',
@@ -23,8 +24,18 @@ export default {
     Price,
     MobileTicketInfo
   },
-  computed: {
-    isMobile: () => window.innerWidth < 650
+  data() {
+    return {
+      isMobile: isMobile(),
+    }
+  },
+  mounted () {
+    window.addEventListener('resize', this.resizeWindow);
+  },
+  methods: {
+    resizeWindow() {
+      this.isMobile = isMobile();
+    }
   }
 }
 </script>

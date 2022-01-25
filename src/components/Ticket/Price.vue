@@ -12,14 +12,25 @@
 
 <script>
 import SimpleButton from '../core/SimpleButton';
+import {isMobile} from "../../assets/js/screen"
 
 export default {
   name: 'price',
   components: {
     SimpleButton
   },
-  computed: {
-    isMobile: () => window.innerWidth < 650
+  data() {
+    return {
+      isMobile: isMobile(),
+    }
+  },
+  mounted () {
+    window.addEventListener('resize', this.resizeWindow);
+  },
+  methods: {
+    resizeWindow() {
+      this.isMobile = isMobile();
+    }
   }
 }
 </script>
