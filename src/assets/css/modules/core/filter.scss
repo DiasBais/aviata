@@ -1,13 +1,15 @@
 @import '../../variables.scss';
 
 .simple-filter {
-  padding: 12px;
+  padding: 12px 0px;
   background: $filter__background;
   border-radius: 4px;
+  margin-bottom: 12px;
 
   .header {
     display: flex;
     justify-content: space-between;
+    padding: 0px 12px 12px 12px;
 
     .title {
       font-family: Open Sans;
@@ -55,3 +57,4 @@
     }
   }
 }
+

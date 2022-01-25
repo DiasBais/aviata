@@ -1,3 +1,30 @@
 <template>
-  <div></div>
+  <div class="price">
+    <div class="title">590 240 ₸</div>
+    <simple-button></simple-button>
+    <div class="price-for-all-passengers">Цена за всех пассажиров</div>
+    <div class="luggage" v-if="!isMobile">
+      <div class="luggage-no">Нет багажа</div>
+      <input class="luggage-add" type="button" value="+ Добавить багаж">
+    </div>
+  </div>
 </template>
+
+<script>
+import SimpleButton from '../core/SimpleButton';
+
+export default {
+  name: 'price',
+  components: {
+    SimpleButton
+  },
+  computed: {
+    isMobile: () => window.innerWidth < 650
+  }
+}
+</script>
+
+<style lang="scss">
+@import '../../assets/css/modules/ticket/price.scss';
+@import '../../assets/css/modules/mobile/ticket/price.scss';
+</style>

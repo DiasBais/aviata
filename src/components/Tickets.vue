@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <Filters></Filters>
-    <Ticket></Ticket>
+  <div class="tickets">
+    <filters></filters>
+    <ticket></ticket>
   </div>
 </template>
 
@@ -17,3 +17,8 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+@import '../assets/css/modules/tickets.scss';
+@import '../assets/css/modules/mobile/tickets.scss';
+</style>

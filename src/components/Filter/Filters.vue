@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="filters">
     <tariff></tariff>
     <airlines></airlines>
   </div>
@@ -20,4 +20,5 @@ export default {
 
 <style lang="scss">
 @import '../../assets/css/modules/filter/filters.scss';
+@import '../../assets/css/modules/mobile/filter/filters.scss';
 </style>

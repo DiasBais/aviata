@@ -1,0 +1,130 @@
+@import '../../variables.scss';
+
+.ticket-info {
+  display: flex;
+  align-items: center;
+  padding: 25px 0px;
+
+  .logo {
+    display: flex;
+
+    .title {
+      font-family: Open Sans;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 19px;
+      display: flex;
+      align-items: center;
+      color: $text__black;
+      margin-left: 10px;
+    }
+  }
+
+  .after {
+    text-align: center;
+    margin-left: 35px;
+
+    p {
+      font-family: Open Sans;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 16px;
+      color: $text__black;
+    }
+
+    h1 {
+      font-family: Open Sans;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 33px;
+      color: $text__black;
+    }
+  }
+
+  .flight {
+    margin-left: 25px;
+
+    .flight--line {
+      margin-top: 10px;
+
+      &-info {
+        display: flex;
+        justify-content: space-between;
+        margin: -7px;
+
+        p {
+          font-family: Open Sans;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 10px;
+          line-height: 12px;
+          text-align: center;
+          color: #B9B9B9;
+        }
+
+        span {
+          font-family: Open Sans;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 12px;
+          line-height: 18px;
+          text-align: center;
+          color: $text__black;
+        }
+      }
+
+      &-svg {
+        ;
+      }
+    }
+
+    .flight--info {
+      font-family: Open Sans;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 16px;
+      text-align: center;
+      color: #FF9900;
+    }
+  }
+
+  .before {
+    text-align: center;
+    margin-left: 25px;
+
+    p {
+      font-family: Open Sans;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 16px;
+      display: flex;
+
+      span {
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 10px;
+        line-height: 14px;
+        display: flex;
+        align-items: center;
+        color: rgba(255, 55, 36, 0.8);
+        margin-left: 3px;
+      }
+    }
+
+    h1 {
+      font-family: Open Sans;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 33px;
+      color: $text__black;
+    }
+  }
+}
+

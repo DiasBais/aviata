@@ -1,0 +1,23 @@
+@import '../../variables.scss';
+
+.simple-button {
+  .select {
+    border: 0;
+    background: #55BB06;
+    border-radius: 4px;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 25px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: $text__white;
+    margin: 8px 15px;
+    cursor: pointer;
+    width: 205px;
+    height: 41px;
+  }
+}
+

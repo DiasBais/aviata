@@ -1,0 +1,46 @@
+.ticket-details {
+  display: flex;
+
+  .flight-details {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    color: #7284E4;
+    border-bottom: 1px dashed #7284E4;
+    text-decoration: none;
+  }
+
+  .fare-terms {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    color: #7284E4;
+    border-bottom: 1px dashed #7284E4;
+    text-decoration: none;
+    margin-left: 20px;
+  }
+
+  .non-returnable {
+    margin-left: 40px;
+    display: flex;
+    align-items: center;
+
+    &--svg {
+      ;
+    }
+
+    &--title {
+      font-family: Arial;
+      font-size: 12px;
+      line-height: 14px;
+      text-align: center;
+      color: #707276;
+      margin-left: 5px;
+    }
+  }
+}
+
