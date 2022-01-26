@@ -2,16 +2,17 @@ import { mount } from '@vue/test-utils'
 import SimpleFilter from '../../src/components/core/SimpleFilter.vue'
 import { fakeData } from './fakeData.js'
 
-function setFilters(airlines) {
+function getFilters(airlines) {
     let filters = [];
     for (const [key, item] of airlines) {
         filters.push({key: key, title: item })
     }
+
     return filters;
 }
 
 describe('SimpleFilter.vue', async () => {
-    const filters = setFilters(Object.entries({...fakeData.airlines}));
+    const filters = getFilters(Object.entries({...fakeData.airlines}));
     const wrapper = mount(SimpleFilter, {
         propsData: {
             title: 'Авиакомпании',
