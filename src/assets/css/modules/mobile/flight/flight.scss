@@ -1,7 +1,10 @@
 @media (max-width: 1280px) {
+  .list-flights {
+    width: 100%;
+  }
   .flight {
     display: block;
-    width: 80%;
+    width: 100%;
 
     &--about {
       margin: 0;
