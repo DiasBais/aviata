@@ -1,4 +1,5 @@
 import { createStore } from 'vuex';
+const axios = require('axios');
 
 const store = createStore({
     state: {
@@ -23,12 +24,14 @@ const store = createStore({
     },
     actions: {
         loadFlights: ({commit}) => {
-            fetch('/results.json')
-                .then(res => res.json())
+            axios.get('http://localhost:8080/results.json')
                 .then(res => {
-                    commit('SET_AIRLINES', res.airlines);
-                    commit('SET_FLIGHTS', res.flights);
-                    console.log(res.flights);
+                    commit('SET_AIRLINES', res.data.airlines);
+                    commit('SET_FLIGHTS', res.data.flights);
+                    // console.log(res.data.flights);
+                })
+                .catch(error => {
+                    console.log(error);
                 });
         }
     },

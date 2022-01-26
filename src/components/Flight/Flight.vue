@@ -1,8 +1,7 @@
 <template>
   <div class="flight">
     <div class="flight--about">
-      <mobile-flight-info :flight="flight" v-if="isMobile"></mobile-flight-info>
-      <flight-info :flight="flight" v-else></flight-info>
+      <flight-info :flight="flight"></flight-info>
       <flight-details :flight="flight" v-if="!isMobile"></flight-details>
     </div>
     <price :flight="flight"></price>
@@ -13,7 +12,6 @@
 import FlightInfo from './FlightInfo'
 import FlightDetails from './FlightDetails'
 import Price from './Price'
-import MobileFlightInfo from './MobileComponents/FlightInfo'
 import {isMobile} from "../../assets/js/screen"
 
 export default {
@@ -21,8 +19,7 @@ export default {
   components: {
     FlightInfo,
     FlightDetails,
-    Price,
-    MobileFlightInfo
+    Price
   },
   props: {
     flight: {

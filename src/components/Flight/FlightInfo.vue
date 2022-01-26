@@ -1,38 +1,46 @@
 <template>
-  <div class="flight-info">
-    <div class="airline-logo">
-      <img :src="`https://aviata.kz/static/airline-logos/80x80/${flight.validating_carrier}.png`">
-      <span class="title">{{ flightDate.carrier_name }}</span>
-    </div>
-    <div class="takeoff">
-      <p class="takeoff--date">{{ takeoffDate }}</p>
-      <h1 class="takeoff--time">{{ takeoffTime }}</h1>
-    </div>
-    <div class="distance-block">
-      <div class="distance">
-        <div class="distance--info">
-          <p class="start-point">{{ startPoint }}</p>
-          <span class="distance--time">{{ distanceDiff(flightDate.traveltime) }}</span>
-          <p class="end-point">{{ endPoint }}</p>
-        </div>
-        <svg width="172" height="5">
-          <use xlink:href="../../assets/icons/0--0--0.svg#icon"></use>
-        </svg>
+  <div>
+    <div class="flight-info" v-if="!isMobile">
+      <div class="airline-logo">
+        <img :src="`https://aviata.kz/static/airline-logos/80x80/${flight.validating_carrier}.png`">
+        <span class="title">{{ flightDate.carrier_name }}</span>
       </div>
-      <div class="layover" v-if="flightDate.stops">через {{ flightDate.segments[0].airport_dest }}, {{ layoverDistanceDiff }}</div>
+      <div class="takeoff">
+        <p class="takeoff--date">{{ takeoffDate }}</p>
+        <h1 class="takeoff--time">{{ takeoffTime }}</h1>
+      </div>
+      <div class="distance-block">
+        <div class="distance">
+          <div class="distance--info">
+            <p class="start-point">{{ startPoint }}</p>
+            <span class="distance--time">{{ distanceDiff(flightDate.traveltime) }}</span>
+            <p class="end-point">{{ endPoint }}</p>
+          </div>
+          <svg width="172" height="5">
+            <use xlink:href="../../assets/icons/0--0--0.svg#icon"></use>
+          </svg>
+        </div>
+        <div class="layover" v-if="flightDate.stops">через {{ flightDate.segments[0].airport_dest }}, {{ layoverDistanceDiff }}</div>
+      </div>
+      <div class="landing">
+        <p class="landing--date">{{ landingDate }}<span v-if="layoverDistanceDayDiff">+{{ layoverDistanceDayDiff }}</span></p>
+        <h1 class="landing--time">{{ landingTime }}</h1>
+      </div>
     </div>
-    <div class="landing">
-      <p class="landing--date">{{ landingDate }}<span v-if="layoverDistanceDayDiff">+{{ layoverDistanceDayDiff }}</span></p>
-      <h1 class="landing--time">{{ landingTime }}</h1>
-    </div>
+    <mobile-flight-info :flight="flight" v-else></mobile-flight-info>
   </div>
 </template>
 
 <script>
 import moment from "moment"
+import {isMobile} from "../../assets/js/screen";
+import MobileFlightInfo from "./MobileComponents/FlightInfo"
 
 export default {
   name: 'FlightInfo',
+  components: {
+    MobileFlightInfo
+  },
   props: {
     flight: {
       type: Object,
@@ -87,11 +95,23 @@ export default {
     formatDate(date) {
       moment.locale('ru');
       return moment(new Date(date)).format('DD MMM ddd');
+    },
+    resizeWindow() {
+      this.isMobile = isMobile();
     }
-  }
+  },
+  data() {
+    return {
+      isMobile: isMobile(),
+    }
+  },
+  mounted () {
+    window.addEventListener('resize', this.resizeWindow);
+  },
 }
 </script>
 
 <style lang="scss">
 @import '../../assets/css/modules/flight/flight_info';
+@import '../../assets/css/modules/mobile/flight/flight_info';
 </style>
