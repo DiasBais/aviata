@@ -3,7 +3,7 @@ import { createStore } from 'vuex';
 const store = createStore({
     state: {
         airlines: {},
-        flights: {}
+        flights: {},
     },
     getters: {
         getAirlines: (state) => state.airlines,

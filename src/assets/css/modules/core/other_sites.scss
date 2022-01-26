@@ -1,0 +1,73 @@
+.other-sites {
+    position: fixed;
+    border-radius: 15px 0px 0px 15px;
+    right: -64px;
+    top: 30%;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    transition: right 0.25s;
+
+    &-close {
+        right: 0px !important;
+    }
+
+    .discover {
+        background: #cecece;
+        border-radius: 10px 0px 0px 10px;
+        width: 16px;
+        height: 100px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 0px 10px #cecece;
+    }
+
+    .discover-content {
+        display: flex;
+    }
+
+    .discover-item {
+        background: #6c6c6c;
+        width: 1px;
+        height: 10px;
+        margin: 1px;
+    }
+
+    .sites {
+        border-radius: 25px 0px 0px 25px;
+        border-top: 1px solid #cecece;
+        border-left: 1px solid #cecece;
+        border-bottom: 1px solid #cecece;
+        box-shadow: 0px 0px 10px #cecece;
+    }
+
+    .sites a {
+        text-decoration: none;
+    }
+
+    .site {
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 30px;
+        line-height: 34px;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        margin: 10px;
+    }
+
+    .site-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 15px;
+    }
+}
+

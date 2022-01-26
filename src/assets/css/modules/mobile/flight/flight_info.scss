@@ -34,10 +34,14 @@
     display: block;
     justify-content: normal;
 
+    .takeoff, .landing {
+      margin-left: 0;
+    }
+
     .header {
       margin: 10px 10px;
 
-      .luggage-no {
+      .luggage-info {
         font-family: Open Sans;
         font-style: normal;
         font-weight: normal;
@@ -48,6 +52,10 @@
         text-align: center;
         color: #202123;
       }
+    }
+
+    .distance-block {
+      margin-left: 0;
     }
   }
 }

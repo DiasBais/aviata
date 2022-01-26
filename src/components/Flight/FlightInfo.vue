@@ -1,9 +1,7 @@
 <template>
   <div class="flight-info">
     <div class="airline-logo">
-      <svg width="20" height="20">
-        <use xlink:href="../../assets/icons/logo-mini-ks.svg#icon"></use>
-      </svg>
+      <img :src="`https://aviata.kz/static/airline-logos/80x80/${flight.validating_carrier}.png`">
       <span class="title">{{ flightDate.carrier_name }}</span>
     </div>
     <div class="takeoff">
@@ -30,13 +28,11 @@
   </div>
 </template>
 
-
 <script>
 import moment from "moment"
 
-
 export default {
-  name: 'flightInfo',
+  name: 'FlightInfo',
   props: {
     flight: {
       type: Object,

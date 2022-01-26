@@ -4,7 +4,7 @@
     <simple-button></simple-button>
     <div class="price-for-all-passengers">Цена за всех пассажиров</div>
     <div class="luggage" v-if="!isMobile">
-      <div class="luggage-no">{{ luggage }}</div>
+      <div class="luggage-info">{{ luggage }}</div>
       <input class="luggage-add" type="button" value="+ Добавить багаж">
     </div>
   </div>

@@ -8,6 +8,11 @@
   .airline-logo {
     display: flex;
 
+    img {
+      width: 20px;
+      height: 20px;
+    }
+
     .title {
       font-family: Open Sans;
       font-style: normal;
