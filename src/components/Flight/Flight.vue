@@ -3,7 +3,7 @@
     <div class="flight--about">
       <mobile-flight-info :flight="flight" v-if="isMobile"></mobile-flight-info>
       <flight-info :flight="flight" v-else></flight-info>
-      <flight-details v-if="!isMobile"></flight-details>
+      <flight-details :flight="flight" v-if="!isMobile"></flight-details>
     </div>
     <price :flight="flight"></price>
   </div>

@@ -1,6 +1,6 @@
 <template>
   <div class="tariff">
-    <simple-filter :title="title" :options="filters"></simple-filter>
+    <simple-filter :title="title" :options="filters" v-model:selected="selectedItems"></simple-filter>
   </div>
 </template>
 
@@ -12,13 +12,23 @@ export default {
   components: {
       SimpleFilter,
   },
+  computed: {
+    selectedItems: {
+      get() {
+        return this.$store.getters['getFilterTariff'];
+      },
+      set(value) {
+        this.$store.commit('SET_FILTER_TARIFF', value)
+      }
+    }
+  },
   data() {
     return {
       title: 'Опции тарифа',
       filters: [
-        { key: 0, title: 'Только прямые' },
-        { key: 1, title: 'Только с багажом' },
-        { key: 2, title: 'Только возвратные' },
+        { key: 'straight', title: 'Только прямые' },
+        { key: 'luggage', title: 'Только с багажом' },
+        { key: 'refundable', title: 'Только возвратные' },
       ],
     }
   }

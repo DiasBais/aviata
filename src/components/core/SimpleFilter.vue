@@ -32,11 +32,10 @@ export default {
     options: {
       type: Array,
       required: true
-    }
-  },
-  data() {
-    return {
-      selectedItems: []
+    },
+    selected: {
+      type: Array,
+      default: () => []
     }
   },
   computed: {
@@ -44,9 +43,24 @@ export default {
       return item => this.selectedItems.some(selected => selected.key === item.key);
     },
   },
+  watch: {
+    selected: {
+      deep: true,
+      handler: function() {
+        this.selectedItems = this.selected;
+      }
+    }
+  },
+  data() {
+    return {
+      selectedItems: []
+    }
+  },
   methods: {
     resetFilter() {
       this.selectedItems = [];
+
+      this.$emit('update:selected', this.selectedItems)
     },
     toggleItem(item) {
       if (this.isSelected(item)) {
@@ -54,7 +68,9 @@ export default {
       } else {
         this.selectedItems.push(item);
       }
-    }
+
+      this.$emit('update:selected', this.selectedItems)
+    },
   }
 }
 </script>

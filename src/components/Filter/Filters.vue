@@ -2,6 +2,7 @@
   <div class="filters">
     <tariff></tariff>
     <airlines></airlines>
+    <div class="reset-all" @click="resetAll">Сбросить все фильтры</div>
   </div>
 </template>
 
@@ -14,7 +15,13 @@ export default {
   components: {
     Tariff,
     Airlines
-  }
+  },
+  methods: {
+    resetAll() {
+      this.$store.commit('SET_FILTER_TARIFF', []);
+      this.$store.commit('SET_FILTER_AIRLINES', []);
+    }
+  },
 }
 </script>
 

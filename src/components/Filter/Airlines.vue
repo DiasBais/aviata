@@ -1,6 +1,6 @@
 <template>
   <div class="airlines">
-    <simple-filter :title="title" :options="filters"></simple-filter>
+    <simple-filter :title="title" :options="filters" v-model:selected="selectedItems"></simple-filter>
   </div>
 </template>
 
@@ -22,7 +22,15 @@ export default {
   computed: {
     ...mapGetters({
       airlines: 'getAirlines'
-    })
+    }),
+    selectedItems: {
+      get() {
+        return this.$store.getters['getFilterAirlines'];
+      },
+      set(value) {
+        this.$store.commit('SET_FILTER_AIRLINES', value)
+      }
+    }
   },
   watch: {
     airlines: {
@@ -30,7 +38,7 @@ export default {
       handler: function() {
         this.setFilters(Object.entries({...this.airlines}))
       }
-    }
+    },
   },
   methods: {
     setFilters(airlines) {
