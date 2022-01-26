@@ -1,24 +1,22 @@
-# aviata
+# Aviata (by Baiseit Dias)
 
-## Project setup
+## Установка модуля
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Запуск сервера
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Для запуска unit test, дальше нажмите на кнопку `a`
 ```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
+npm run test:unit
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Контакты
+```
++7 707 791 70-11
+https://t.me/diasbaiseit
+```

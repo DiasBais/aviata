@@ -2,18 +2,32 @@ import { mount } from '@vue/test-utils'
 import SimpleFilter from '../../src/components/core/SimpleFilter.vue'
 import { fakeData } from './fakeData.js'
 
-describe('vuex using a mock store', async () => {
+function setFilters(airlines) {
+    let filters = [];
+    for (const [key, item] of airlines) {
+        filters.push({key: key, title: item })
+    }
+    return filters;
+}
+
+describe('SimpleFilter.vue', async () => {
+    const filters = setFilters(Object.entries({...fakeData.airlines}));
     const wrapper = mount(SimpleFilter, {
         propsData: {
             title: 'Авиакомпании',
-            options: fakeData.flights[0],//fakeData.airlines[Object.keys(fakeData.airlines)[0]]
+            options: filters,
             selected: []
         }
     })
 
-    test('check toggleItem', () => {
-        console.log(wrapper.vm.toggleItem);
-        expect(wrapper.vm.toggleItem).toBe('20 кг');
+    test('select item', () => {
+        wrapper.vm.toggleItem(filters[0]);
+        expect(wrapper.vm.selectedItems[0].key).toBe('TF');
+    });
+
+    test('remove selectedItem', () => {
+        wrapper.vm.toggleItem(filters[0]);
+        expect(wrapper.vm.selectedItems).toEqual([]);
     });
 
 })
