@@ -24,11 +24,10 @@ const store = createStore({
     },
     actions: {
         loadFlights: ({commit}) => {
-            axios.get('http://localhost:8080/results.json')
+            axios.get('/results.json')
                 .then(res => {
                     commit('SET_AIRLINES', res.data.airlines);
                     commit('SET_FLIGHTS', res.data.flights);
-                    // console.log(res.data.flights);
                 })
                 .catch(error => {
                     console.log(error);
